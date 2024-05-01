@@ -1,7 +1,8 @@
 const accountId = 24640
 let accountEmail = "hitesh@google.com"
 var accountPassword = "12345"
-accountCity = "Dehradoon"
+accountCity = "Dehradoon" // not a good way to declare variable
+let accountState;
  
 // accountEmail "hc@hc.com"
 accountPassword = "212121"
@@ -9,4 +10,9 @@ accountCity = "jaipur"
 
 // console.log(accountId);
 
-console.table([accountId,accountEmail,accountPassword,accountCity]);
+/*
+prefer not to use var
+becouse of issue in block scope and functional scope
+*/
+
+console.table([accountId,accountEmail, accountPassword, accountCity, accountState]);

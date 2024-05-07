@@ -17,6 +17,9 @@
 "33" - 33
 "33abc" - NaN
 true - 1;  false - 0;
+"negi" - Nan
+undefined - NaN
+NUll - 0
 */
 
 // let isLoggedIn = 1 -> true
@@ -30,3 +33,10 @@ true - 1;  false - 0;
 " " - false
 "negi" - true
 */
+
+let someNumber = 33
+
+console.log(typeof someNumber);
+let stringNumber = String(someNumber)
+console.log(stringNumber);
+console.log(typeof stringNumber);

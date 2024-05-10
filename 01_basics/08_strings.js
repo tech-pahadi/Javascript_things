@@ -64,3 +64,4 @@
 
 // const myUrl = "https://negi-boi-pahadii-uk07-devbhooomi.com"
 // console.log(myUrl.split("-"));
+

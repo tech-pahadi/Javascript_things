@@ -52,5 +52,5 @@ function returnSecondValue(getArray)
 };
 
 // handleArray1(myNewArray)
-console.log(returnSecondValue([12,45,32,78]));
+console.log(returnSecondValue([12,45,32,78])));
 

@@ -77,6 +77,7 @@ console.log(result2);
 // jitni baar function execute honge utni baar hmare liye ye box creat hoga - aka new excutional context nd inside it ( new enviroment + execution thread )
 // so now ye 2 kaam dubara honge - 1st memory-phase , 2nd - execution phase - which is excuted for addnum() - jitni baaare hum function likhenge utni baar hoga beocuse global defined only one time
 
+// and yes important note : after creat this sandbox/executional context they delete also 
 
 // now again memory phase for - addnum
 
@@ -88,4 +89,51 @@ console.log(result2);
 
 // num1 <- 10 
 // num2 <- 5 
-// total <- 15 - (now this is )
+// total <- 15 - (now this is total also return back in their parent execution context - wese bolte hai ki global execution context mai hm return krte hai )
+// so the total thing we return in our global execution context
+
+
+
+// now again the function call in last line so again - the sandbox created and then inside it - a new varibale enviroment + thread (js all execution here)
+
+// now 2 phase again come - 1st memory phase , 2nd execution context/phase - now again the same story happen.- again the memory phase -  val1,val2,val3 - undefined and then. excution context - value changes but in actual same thing happen again. then the total come - again and then the total go to global execution context mai jaayega..
+
+
+
+
+
+// Now call stacks topic : 
+
+// so here lifo concept chlta hai  - last in first out
+// so here is the example 
+
+// go to browser - inspect Element - source - and then snippet -  creat new snippet 
+
+function one() {
+    console.log("One")
+    two()
+}
+
+function two() {
+    console.log("Two")
+    three()
+}
+
+function three() {
+    console.log("Three")
+}
+
+one()
+two()
+three()
+
+
+// we see again this one 
+
+
+
+
+
+
+
+

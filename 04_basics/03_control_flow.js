@@ -48,6 +48,12 @@ if (Object.keys(emptyObj).length === 0) {
 
 // Nullish Coalescing Operator (??) :: (null and undefined - puri kahani)
 
+// so here we see value diretly but these not the case this is just for example purpose
+
+// here our return values come - if there is an function execute then there return value - sometime mauybe the funciton is not in our control (third party ka ho / firebase ka ho , appwrite ka ho ) or ho skta hai return mai hmko null krde - so here we not take null so we use this and execute other function or maybe kuch flag value lga de tb jaake hme pta rhe kya krna hai kya nhi 
+
+// becouse null and undefined value is not good in our program becouse we don't know how this value comes - so at that place flag value , true/false daal do - so for that purpose we use Nullish Coalescing Operator
+
 let val1;
 val1 = 5 ?? 10  // 5 output - so what is the main purpose of this ?? sign - so sometimes if we call from database and from use firebase or appwrite so we have not get the direct response - we get 2 value so chances is null response we get or maybe no reponse comes - undefined aa jaye so in that case our total codestructure pareshaan ho skta hai 
 

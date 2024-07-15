@@ -94,3 +94,6 @@ for (const [key,value] of myobj) {
 
 // so here it shows an error and show this myobj is not iterable - so there is a way to iterate objects we see later on .
 // same error if we create obj with this 2nd method
+
+
+

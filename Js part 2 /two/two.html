@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>DOM Learning</title>
+    <link rel="stylesheet" href="style2.css" />
+  </head>
+  <body class="bg-black">
+    <div>
+      <h1 id="title" class="heading">
+        Dom learning through Tech Pahadi
+        <span style="display: none">Test Text</span>
+      </h1>
+      <h2>Lorem ipsum dolor sit.</h2>
+      <h2>Lorem ipsum dolor sit amet.</h2>
+      <h2>Lorem ipsum dolor sit amet consectetur adipisicing.</h2>
+      <p>Lorem ipsum dolor sit amet.</p>
+      <input type="password" name="" id="" />
+
+      <ul>
+        <li class="list-item">One</li>
+        <li class="list-item">Two</li>
+        <li class="list-item">Three</li>
+        <li class="list-item">Four</li>
+      </ul>
+    </div>
+  </body>
+  <script src="app2.js"></script>
+</html>
+
+<!-- Here comes the part 2 tutorial  -->
+
+<!-- to acess the id by using dom we simply write  -->
+<!-- document.getelementbyid('xyz') -->
+
+<!-- to acess the name of the id by using dom we simply write  -->
+<!-- document.getelementbyid('xyz').id -->
+
+<!-- to acess the name of the id by using dom we simply write   -->
+<!-- document.getelementbyid('xyz').className -->
+
+<!-- this method is wrong to acess the class name  -->
+<!-- document.getelementbyid('xyz').class -->
+
+<!-- behind the scene in elements and all we write also class but behind the scene the way document understand these is - classname  -->
+
+<!-- thats why when we wrtie javscript in html inside react which we call as jsx so we also write there classname -->
+<!-- 1st one - conflict with the classname -->
+<!-- 2nd one - when we create structure inside dom so we write it as a classname -->
+
+<!-- we also get all the attributes from here by using -- document.getElementById('title').getAttribute('key') -->
+<!-- document.getElementById('title').getAttribute('id' ) -->
+<!-- document.getElementById('title').getAttribute('class') -->
+
+<!-- we also set the attribute like we get  -->
+<!-- document.getElementById('title').setAttribute('key','value') -->
+<!-- document.getElementById('title').setAttribute('class','negi') -->
+<!-- it always overwrite  -->
+
+<!-- and if we want multiple class set so we do like this : -->
+<!-- document.getElementById('title').setAttribute('class','negi heading') -->
+<!-- many times people forget about the old attribute and if we define one attribute then it overwrite the preious one   -->
+
+<!-- now if we want to store  -->
+<!-- const title = document.getElementById('title') -->
+
+<!-- now we easy acess the title id by using simply title - so  due to its is an object so using dot we easily acess these -->
+
+<!-- style change or set -->
+<!-- title.style.color = "blueviolet" -->
+<!-- title.style.backgroundColor = "blueviolet" -->
+<!-- title.style.padding = '20px' -->
+<!-- title.style.borderRadius = '15px' -->
+
+<!-- How to add the content or also get the content(text)  -->
+
+<!-- title.textContent
+title.innerText
+title.innerHTML -->
+
+<!-- so what is the difference b/w all of these three -->
+<!-- title.textContent
+title.innerText -->
+
+<!-- so if we use span and inside that give a style called display none -->
+<!-- title.innerText 
+'Dom learning through Tech Pahadi' 
+title.textContent 
+'\n Dom learning through Tech Pahadi\n Test Text\n -->
+
+<!-- inside innerText only the text show which is visible but in textContent all the text is shown - it depen on use case no one is wrong here  -->
+<!-- and the 3rd and last one innerHTML give all the value without any filter - full html value -->
+
+<!-- so that's why when we give the value to any value so we write like this - .innerHTML = "<p>Negi</p>" -->
+
+<!-- Now more query selector to understand  -->
+
+<!-- document.querySelector('h1') - so we get the first html in our document -->
+
+<!-- so now to get search by using id using querselector : -->
+<!-- document.querySelector("#title") -->
+
+<!-- for class: -->
+<!-- document.querySelector(".heading") -->
+
+<!-- to select a input tag which type is password : -->
+<!-- document.querySelector('input[type = "password"]') -->
+
+<!-- to select a para which is inside a div and  first child so we do : and it depends on our css selector skills -->
+<!-- document.querySelector("p:first-child") -->
+
+<!-- by using this we select the ul ok -->
+<!-- document.querySelector('ul') -->
+<!-- then we store that ul into myul variable -->
+<!-- ​ const myul = document.querySelector('ul') -->
+<!--  then inside ul we know li are there so we select the li again using query selector -->
+<!--  myul.querySelector('li') -->
+<!-- thne we want to turn green the color of the first li so for that we use only queryselector not all -->
+<!-- so here we again store it inside a variable  -->
+<!-- ​ const turngreen = myul.querySelector('li') -->
+<!-- turngreen.style.backgroundColor = "blueviolet"  -->
+<!-- turngreen.style.padding = "10px" -->
+
+<!-- so there is a lot we do anything -->
+<!-- turngreen.innerText -->
+<!-- turngreen.innerText -->
+<!-- turngreen.innerText  = "five"-->
+
+<!-- now move into querySelectorAll -->
+<!-- document.querySelectorAll('li') - nodeList(3) -->
+
+<!-- so nodelist is kinda array but it is not - there is a foreach loop option inside prototype - becouse inside arrray we use map 
+ loops and all but not in this -->
+
+<!-- many of the peoples do mistakes in this so the nodeList and HtmlCollection is not a pure Array -->
+
+<!-- always go to the prototype and then check there so in nodeList and HtmlCollection only foreach loop option is avail. not map  -->
+
+<!-- so then we hold this into a : -->
+<!--  const templist =  document.querySelectorAll('li')  -->
+
+<!-- now if we do like this so it won;t work -->
+<!-- templist.style.color = "green" -->
+
+<!-- so how we do this thing - so we know tempList is not an array it is an nodeList but its kinda Array to - letsee how -->
+<!-- templist[0].style.color = "green" -->
+
+<!-- always use this way either you have only one H1 element or infinite -->
+<!-- const myH1 = document.querySelectorAll('h1')  -->
+<!-- myH1[0].style.backgroundColor = "violet" -->
+
+<!-- to use foreach loop in nodeList -->
+<!-- const tempList = document.querySelectorAll('li') -->
+<!-- tempList.forEach(function (li) {
+    li.style.color = "blue"
+}) -->
+
+<!-- offcourse there is a way to convert nodeList to array or HTMLcollection to array but it is not a good way  -->
+<!-- but max. time you try to use foreach with nodeList and HTMLCollection becouse map is not there - if we want so first we 
+ convert nodeList into Array and then apply   -->
+
+<!-- so here first we try to get all the li's by using there class name -->
+<!-- document.getElementsByClassName('list-item') -->
+<!-- then we get a htmlcollection list in htmlcollection prototype there is no foreach loop option -->
+<!-- HTMLCollection(4) [li.list-item, li.list-item, li.list-item, li.list-item]  -->
+<!-- then we store it inside a variable called tempClassList -->
+<!-- const tempClassList = document.getElementsByClassName('list-item') -->
+<!-- tempClassList.foreach(function (li) { li.style.color = "red" }) -->
+<!-- so this for-loop not work at all -->
+
+<!-- so what we do now - so yes we convert the HTMLCollection into array -->
+<!-- Array.from(tempClassList) -->
+<!-- now we do anything which we do with arrays -->
+<!-- const myarr1 = Array.from(tempClassList)  -->
+<!-- myarr1.forEach(function (li) {
+    li.style.color = "orange"
+}) -->

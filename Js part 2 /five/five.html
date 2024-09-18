@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Final video on dom</title>
+    <link rel="stylesheet" href="style5.css" />
+  </head>
+  <body class="bg-black">
+    <ul class="language">
+      <li>Javascript</li>
+    </ul>
+  </body>
+  <script>
+    // so now we add a list itme here now you say it very simple lie previous one
+    // so there are 2-3 ways to add  list item here
+
+    // 1st way - if we design a function of that - becouse maybe in futur e we want more li's
+
+    function addlanguage(langName) {
+      const li = document.createElement("li");
+      // li.innerHTML = langName
+      li.innerHTML = `${langName}`;
+      document.querySelector(".language").appendChild(li);
+    }
+    addlanguage("Python");
+    addlanguage("C++");
+
+    // so this is waht comes first in the people's mind
+    // but there is one more problem like here only javascript is inside the ul but if there are 1000 or 100000 number of li so it traverse
+    // full of the li list and then add becouse hum end mai jaana cah rhe hai and these is a problem becouse jitni baar function run ho rha each
+    // and every time it traverse the whole li - which is not a good thing - becouse somtime optimization issue comes
+
+    // so when we see in the large scale so there exact same method define but some optimization or dsa ways
+
+    function addOptiLang(langName) {
+      const li = document.createElement("li");
+      //   const addText = document.createTextNode(langName);
+      //   li.appendChild(addText);
+      //   so this is slightly optimize as compare to above one
+      li.append(document.createTextNode(langName));
+      document.querySelector(".language").appendChild(li);
+    }
+    addOptiLang("Typescript");
+    addOptiLang("React");
+
+    // work is same but the below one function is slightly optimize way - becouse we not traverse the whole tree in the below one we directly create a
+    // li and insert a textnode and sidha kaam ho gya - for big projects always the 2nd approach is best
+
+    // now we edit this value and remove to - becouse we now know how to create the element
+
+    // query selector comes in - jQuery but it is very powerfull selector - there are many selector work same in this - css selector / jQuery/javascript
+
+    // learn by yourself this nth-child and all it same like in css
+    // to select the python we do
+    const secondLang = document.querySelector("li:nth-child(2)");
+    console.log(secondLang);
+
+    // 1st approach
+    // but is this optimize - again do the full traversing and all - this also work but always use optimize one
+    // secondLang.innerHTML = "Mojo";
+
+    // 2nd approach
+    const newLi = document.createElement("li");
+    // we also use here our appendChild and all like in the above one
+    // in textContent and innerHTML is not that much diff.  comes
+    newLi.textContent = "Golang";
+    // so for now this is in air so to add we do
+    secondLang.replaceWith(newLi);
+
+    // 3rd approach
+    const firstLang = document.querySelector("li:first-child");
+    firstLang.outerHTML = "<li>Node</li>";
+
+    // remove method
+    const lastLang = document.querySelector("li:last-child");
+    lastLang.remove();
+  </script>
+</html>
+
+<!-- // final video on dom-->

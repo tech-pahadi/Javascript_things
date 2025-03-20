@@ -5,7 +5,7 @@
 // setInterval(sayNegi,1000);
 
 // we have also a third parameters in setInterval 
-
+ 
 const sayNegi1 = function(str){
     console.log(str, Date.now());
 }

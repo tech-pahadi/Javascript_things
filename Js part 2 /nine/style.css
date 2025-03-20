@@ -1,0 +1,52 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body
+{
+    background-color: blueviolet;
+}
+
+.card-body
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+   
+}
+
+.card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 400px;
+    height: 400px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+h1
+{
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+h3
+{
+    text-align: center;
+    margin-top: 10px;
+}
+
+
+
+.card-img
+{
+    width: 200px;
+    height: 200px;
+    
+}
